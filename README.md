@@ -1,85 +1,86 @@
-Abdominal BT Görüntülerinde Organ ve Lezyon Tespiti
-Bu proje, bilgisayarlı tomografi (BT) taramalarındaki karın bölgesi (abdomen) görüntülerinde çeşitli anatomik yapıları (organlar) ve potansiyel lezyonları otomatik olarak tespit etmek ve sınıflandırmak için derin öğrenme tabanlı bir nesne algılama modeli (YOLOv8) geliştirmeyi amaçlamaktadır.
+🧠 Abdominal BT Görüntülerinde Organ ve Lezyon Tespiti
+Bu proje, bilgisayarlı tomografi (BT) taramalarındaki karın bölgesi (abdomen) görüntülerinde çeşitli anatomik yapıları (organlar) ve potansiyel lezyonları otomatik olarak tespit etmek ve sınıflandırmak için YOLOv8 tabanlı bir derin öğrenme nesne algılama modeli geliştirmeyi amaçlamaktadır.
 
-🚀 Proje Amacı
-Projenin temel hedefleri:
-
-Tıbbi görüntüleme alanında yapay zeka uygulamalarını göstermek.
-
-Radyologların tanı süreçlerini hızlandırmak ve potansiyel hata oranlarını azaltmak.
-
-Hastalıkların erken teşhisine ve tedavi planlamasına katkıda bulunmak.
-
-DICOM formatındaki tıbbi görüntüleri işleyerek YOLO modeline uygun hale getirmek.
-
-Eğitilmiş bir nesne algılama modeli ile karın bölgesindeki 11 farklı tıbbi sınıfı tespit etmek.
+🎯 Proje Amacı
+🔹 Tıbbi görüntüleme alanında yapay zeka uygulamalarını göstermek.
+🔹 Radyologların tanı süreçlerini hızlandırmak ve potansiyel hata oranlarını azaltmak.
+🔹 Hastalıkların erken teşhisine ve tedavi planlamasına katkı sağlamak.
+🔹 DICOM formatındaki görüntüleri işleyerek YOLO modeline uygun hale getirmek.
+🔹 11 farklı tıbbi sınıfı YOLOv8 ile tespit etmek.
 
 🌟 Özellikler
-DICOM'dan PNG'ye Dönüşüm: DICOM formatındaki tıbbi görüntüleri okunabilir PNG formatına dönüştürme ve pencereleme (windowing) uygulama.
+📸 DICOM'dan PNG'ye Dönüşüm
+➡ DICOM formatındaki görüntüler okunur, pencereleme (windowing) uygulanarak PNG'ye dönüştürülür.
 
-Veri Analizi ve Görselleştirme: Etiketlenmiş veri setindeki sınıf dağılımını analiz etme ve sınırlayıcı kutuların görüntüler üzerinde görselleştirilmesi.
+📊 Veri Analizi ve Görselleştirme
+➡ Etiketli veri kümesinin sınıf dağılımı analiz edilir, sınırlayıcı kutular görsellerle birlikte gösterilir.
 
-YOLOv8 Entegrasyonu: Ultralytics YOLOv8 mimarisini kullanarak nesne algılama modeli eğitimi.
+🚀 YOLOv8 Entegrasyonu
+➡ Ultralytics mimarisi kullanılarak yüksek performanslı model eğitimi sağlanır.
 
-Veri Seti Hazırlığı: Eğitim, doğrulama ve test setlerine ayrılma ve YOLO formatına uygun data.yaml dosyasının oluşturulması.
+🗂 Veri Seti Hazırlığı
+➡ Eğitim/Doğrulama/Test setlerine ayrılır, data.yaml dosyası oluşturulur.
 
-Model Eğitimi ve Değerlendirmesi: Hiperparametre ayarları ile model eğitimi ve mAP gibi standart metriklerle performans değerlendirmesi.
+📈 Model Eğitimi ve Değerlendirme
+➡ Hiperparametrelerle eğitim yapılır, mAP, Precision, Recall gibi metrikler hesaplanır.
 
-Ensemble Tahmin: Birden fazla modelin tahminlerini birleştirerek daha sağlam sonuçlar elde etme (isteğe bağlı/geliştirme aşamasında).
+🧠 Ensemble Tahmin (Opsiyonel)
+➡ Birden fazla modelin tahminleri ortalanarak daha kararlı sonuçlar elde edilir.
 
-Google Drive Entegrasyonu: İşlenen verilerin ve eğitilmiş modellerin Google Drive'a kalıcı olarak kaydedilmesi.
-Teknolojiler
-Python 3.x
+💾 Google Drive Entegrasyonu
+➡ Eğitim sonuçları ve veri seti Drive’a otomatik olarak yedeklenir.
 
-pydicom: DICOM dosyalarını okumak ve işlemek için.
+🧰 Kullanılan Teknolojiler
+🐍 Python 3.x
 
-opencv-python (cv2): Görüntü işleme ve kaydetme işlemleri için.
+🧪 pydicom, opencv-python, numpy, pandas
 
-numpy: Sayısal işlemler için.
+📊 matplotlib, seaborn
 
-pandas: Veri analizi ve Excel dosyalarını işlemek için.
+🔁 tqdm, yaml
 
-matplotlib & seaborn: Veri görselleştirme ve grafikleri oluşturma için.
+🧠 ultralytics (YOLOv8)
 
-tqdm: İşlem ilerlemesini göstermek için.
+⚙️ Kurulum ve Çalıştırma
+📂 Google Colab'da Açın
+→ abdomen.py dosyasını yükleyin.
 
-ultralytics: YOLOv8 modeli eğitimi ve çıkarımı için.
-
-PyYAML (veya dahili yaml kütüphanesi): data.yaml dosyalarını oluşturmak ve işlemek için.
-
-Kurulum ve Çalıştırma
-Google Colab'da Açın: Bu proje, Google Colab ortamında çalıştırılmak üzere tasarlanmıştır. abdomen.py dosyasını Colab'a yükleyin.
-
-Gerekli Kütüphaneleri Yükleyin:
+📦 Kütüphaneleri Yükleyin
 !pip install pydicom opencv-python pandas matplotlib seaborn tqdm ultralytics PyYAML
-Google Drive Bağlantısı: Colab ortamında Google Drive'ınızı bağlayın:
+🔗 Google Drive’ı Bağlayın
 from google.colab import drive
 drive.mount('/content/drive')
-Veri Hazırlığı:
+📁 Verileri Yerleştirin
 
-Ham DICOM dosyalarınızı /content/drive/MyDrive/abdomen/images_raw dizinine yerleştirin.
+DICOM’lar → /content/drive/MyDrive/abdomen/images_raw
 
-Etiketleme bilgilerinizi içeren Bilgi.xlsx dosyasını (TRAININGDATA adlı bir sayfa içermelidir) projenin çalıştığı ana dizinde (veya erişilebilir bir yolda) bulundurun.
+Etiketler → Bilgi.xlsx (sayfa adı: TRAININGDATA)
 
-Betiği Çalıştırın: abdomen.py betiğini Colab'da sırayla veya tüm hücreleri çalıştırarak çalıştırın.
+▶️ Betiği Çalıştırın
 
-📝 Kullanım
-Betiği çalıştırdıktan sonra aşağıdaki ana adımlar otomatik olarak gerçekleştirilecektir:
+Tüm hücreleri çalıştırarak sıralı işlem başlatın.
 
-DICOM Dönüşümü: images_raw dizinindeki DICOM dosyaları images_png dizinine PNG olarak kaydedilecektir.
+🧪 Otomatik İşlem Adımları
+✅ DICOM Dönüşümü
+✅ Veri Analizi ve Görselleştirme
+✅ Veri Seti Hazırlığı
+✅ Model Eğitimi
+✅ Test Üzerinde Değerlendirme
+✅ (Opsiyonel) Ensemble
+✅ Google Drive’a Kayıt
 
-Veri Analizi ve Görselleştirme: Bilgi.xlsx dosyası okunacak, sınıf dağılımı grafiği oluşturulacak ve etiketli görüntüler rastgele seçilerek sınırlayıcı kutularla birlikte gösterilecektir.
+📊 Sonuçlar ve Performans
+📂 runs/detect/<model_tag>/ dizininde:
 
-Veri Seti Hazırlığı: Görüntüler ve etiketler eğitim, doğrulama ve test setlerine ayrılacak, dataset_abdomen klasörüne kopyalanacak ve bir data.yaml dosyası oluşturulacaktır.
+Eğitim kayıpları (loss)
 
-Model Eğitimi: YOLO modeli, hazırlanan veri seti üzerinde belirtilen hiperparametrelerle eğitilecektir. Eğitim sonuçları runs/detect/ dizinine kaydedilecektir.
+mAP eğrileri
 
-Model Değerlendirme: Eğitilmiş model, test seti üzerinde değerlendirilecek ve performans metrikleri (mAP, Precision, Recall) çıktıda gösterilecektir.
+Precision–Recall grafikleri
+ve daha fazlası grafikler ve results.csv olarak kaydedilir.
 
-Ensemble Tahmini: (Eğer aktifse) Birden fazla tahmin birleştirilecek ve ensemble_output dizinine kaydedilecektir.
+🤝 Katkıda Bulunma
+Bu proje geliştirilmeye açıktır!
+🛠️ Pull request gönderebilir veya bir issue açarak katkı sağlayabilirsiniz.
+Her katkı, klinik yapay zekâ uygulamaları için büyük bir adımdır.
 
-Kaydetme: Eğitilmiş model ağırlıkları (best.pt) ve nihai veri seti (dataset_final), Google Drive'daki ilgili dizinlere kalıcı olarak kaydedilecektir.
-Sonuçlar ve Performans
-Model eğitimi tamamlandıktan sonra, runs/detect/<model_tag>/ dizininde eğitim metriklerini (kayıp grafikleri, mAP eğrileri vb.) gösteren çeşitli grafikler ve tablolar bulacaksınız. Konsol çıktısında ise test seti üzerindeki nihai mAP değerleri görüntülenecektir.
-Katkıda Bulunma
-Proje geliştirmeye açık olup, her türlü katkı (kod, hata raporu, özellik önerisi) memnuniyetle karşılanır. Lütfen bir pull request oluşturmaktan veya bir issue açmaktan çekinmeyin.
