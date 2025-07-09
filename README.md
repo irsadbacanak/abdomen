@@ -1,4 +1,5 @@
 🧠 Abdominal BT Görüntülerinde Organ ve Lezyon Tespiti 
+
 Bu proje, bilgisayarlı tomografi (BT) taramalarındaki karın bölgesi (abdomen) görüntülerinde çeşitli anatomik yapıları (organlar) ve potansiyel lezyonları otomatik olarak tespit etmek ve sınıflandırmak için YOLOv8 tabanlı bir derin öğrenme nesne algılama modeli geliştirmeyi amaçlamaktadır.
 
 🎯 Proje Amacı
