@@ -62,6 +62,7 @@ Bu proje, bilgisayarlı tomografi (BT) taramalarındaki karın bölgesi (abdomen
 🔗 Google Drive’ı Bağlayın
 from google.colab import drive
 drive.mount('/content/drive')
+
 📁 Verileri Yerleştirin
 
 DICOM’lar → /content/drive/MyDrive/abdomen/images_raw
